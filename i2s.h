@@ -115,4 +115,3 @@ struct zmcu_i2s {
 #define I2S_RXDATA_DATA(x)			((x) << 0)
 
 };
-

@@ -280,4 +280,3 @@ struct zmcu_i2c_master {
 #define I2CM_FIFOPTR_CPUWRPTR_MASK		I2CM_FIFOPTR_CPUWRPTR(B00001111)
 
 };
-

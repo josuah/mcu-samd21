@@ -154,4 +154,3 @@ struct zmcu_dsu {
 #define DSU_CID3_PREAMBLEB3_MASK		DSU_CID3_PREAMBLEB3(B11111111)
 
 };
-

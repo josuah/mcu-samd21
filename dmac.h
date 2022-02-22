@@ -206,4 +206,3 @@ struct zmcu_dmac {
 #define DMAC_DESCADDR_DESCADDR(x)		((x) << 0)
 
 };
-

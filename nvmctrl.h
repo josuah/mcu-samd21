@@ -80,4 +80,3 @@ struct zmcu_nvmctrl {
 #define NVMCTRL_LOCK_LOCK(x)			((x) << 0)
 
 };
-

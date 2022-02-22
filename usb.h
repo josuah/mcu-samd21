@@ -474,4 +474,3 @@ struct zmcu_usb {
 #define USB_STATUS_PIPE_DTGLER			(1u << 0)
 
 };
-

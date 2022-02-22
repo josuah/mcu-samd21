@@ -203,4 +203,3 @@ struct zmcu_rtc {
 #define RTC_MASK_SEL_MASK			RTC_MASK_SEL(B00000111)
 
 };
-

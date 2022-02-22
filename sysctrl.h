@@ -246,4 +246,3 @@ struct zmcu_sysctrl {
 #define SYSCTRL_DPLLSTATUS_LOCK			(1u << 0)
 
 };
-

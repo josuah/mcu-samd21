@@ -252,4 +252,3 @@ struct zmcu_tcc {
 #define TCC_CCB_DITHERB_MASK			TCC_CCB_DITHERB(B00111111)
 
 };
-

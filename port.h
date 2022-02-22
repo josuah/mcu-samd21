@@ -3,7 +3,6 @@
 #include <binary.h>
 
 #define PORT ((struct zmcu_port *)0x41004400)
-#define PORT ((struct zmcu_port *)0x41004400)
 
 struct zmcu_port {
 
