@@ -10,7 +10,9 @@ struct zmcu_nvmctrl {
 	/* 0x00: Control A */
 	uint16_t volatile CTRLA;
 #define NVMCTRL_CTRLA_CMDEX(x)			((x) << 8)
+#define NVMCTRL_CTRLA_CMDEX_MASK		NVMCTRL_CTRLA_CMDEX(B11111111)
 #define NVMCTRL_CTRLA_CMD(x)			((x) << 0)
+#define NVMCTRL_CTRLA_CMD_MASK			NVMCTRL_CTRLA_CMD(B01111111)
 
 	/* 0x02 */
 	uint8_t volatile RESERVED0[0x04-0x02];
@@ -19,14 +21,18 @@ struct zmcu_nvmctrl {
 	uint32_t volatile CTRLB;
 #define NVMCTRL_CTRLB_CACHEDIS			(1u << 18)
 #define NVMCTRL_CTRLB_READMODE(x)		((x) << 16)
+#define NVMCTRL_CTRLB_READMODE_MASK		NVMCTRL_CTRLB_READMODE(B00000011)
 #define NVMCTRL_CTRLB_SLEEPPRM(x)		((x) << 8)
+#define NVMCTRL_CTRLB_SLEEPPRM_MASK		NVMCTRL_CTRLB_SLEEPPRM(B00000011)
 #define NVMCTRL_CTRLB_MANW			(1u << 7)
 #define NVMCTRL_CTRLB_RWS(x)			((x) << 1)
+#define NVMCTRL_CTRLB_RWS_MASK			NVMCTRL_CTRLB_RWS(B00001111)
 
 	/* 0x08: NVM Parameter */
 	uint32_t volatile PARAM;
 #define NVMCTRL_PARAM_RWWEEP(x)			((x) << 20)
 #define NVMCTRL_PARAM_PSZ(x)			((x) << 16)
+#define NVMCTRL_PARAM_PSZ_MASK			NVMCTRL_PARAM_PSZ(B00000111)
 #define NVMCTRL_PARAM_NVMP(x)			((x) << 0)
 
 	/* 0x0C: Interrupt Enable Clear */

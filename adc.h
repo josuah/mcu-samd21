@@ -17,20 +17,26 @@ struct zmcu_adc {
 	uint8_t volatile REFCTRL;
 #define ADC_REFCTRL_REFCOMP			(1u << 7)
 #define ADC_REFCTRL_REFSEL(x)			((x) << 0)
+#define ADC_REFCTRL_REFSEL_MASK			ADC_REFCTRL_REFSEL(B00001111)
 
 	/* 0x02: Average Control */
 	uint8_t volatile AVGCTRL;
 #define ADC_AVGCTRL_ADJRES(x)			((x) << 4)
+#define ADC_AVGCTRL_ADJRES_MASK			ADC_AVGCTRL_ADJRES(B00000111)
 #define ADC_AVGCTRL_SAMPLENUM(x)		((x) << 0)
+#define ADC_AVGCTRL_SAMPLENUM_MASK		ADC_AVGCTRL_SAMPLENUM(B00001111)
 
 	/* 0x03: Sampling Time Control */
 	uint8_t volatile SAMPCTRL;
 #define ADC_SAMPCTRL_SAMPLEN(x)			((x) << 0)
+#define ADC_SAMPCTRL_SAMPLEN_MASK		ADC_SAMPCTRL_SAMPLEN(B00111111)
 
 	/* 0x04: Control B */
 	uint16_t volatile CTRLB;
 #define ADC_CTRLB_PRESCALER(x)			((x) << 8)
+#define ADC_CTRLB_PRESCALER_MASK		ADC_CTRLB_PRESCALER(B00000111)
 #define ADC_CTRLB_RESSEL(x)			((x) << 4)
+#define ADC_CTRLB_RESSEL_MASK			ADC_CTRLB_RESSEL(B00000011)
 #define ADC_CTRLB_CORREN			(1u << 3)
 #define ADC_CTRLB_FREERUN			(1u << 2)
 #define ADC_CTRLB_LEFTADJ			(1u << 1)
@@ -42,6 +48,7 @@ struct zmcu_adc {
 	/* 0x08: Window Monitor Control */
 	uint8_t volatile WINCTRL;
 #define ADC_WINCTRL_WINMODE(x)			((x) << 0)
+#define ADC_WINCTRL_WINMODE_MASK		ADC_WINCTRL_WINMODE(B00000111)
 
 	/* 0x09 */
 	uint8_t volatile RESERVED1[0x0C-0x09];
@@ -57,10 +64,15 @@ struct zmcu_adc {
 	/* 0x10: Input Control */
 	uint32_t volatile INPUTCTRL;
 #define ADC_INPUTCTRL_GAIN(x)			((x) << 24)
+#define ADC_INPUTCTRL_GAIN_MASK			ADC_INPUTCTRL_GAIN(B00001111)
 #define ADC_INPUTCTRL_INPUTOFFSET(x)		((x) << 20)
+#define ADC_INPUTCTRL_INPUTOFFSET_MASK		ADC_INPUTCTRL_INPUTOFFSET(B00001111)
 #define ADC_INPUTCTRL_INPUTSCAN(x)		((x) << 16)
+#define ADC_INPUTCTRL_INPUTSCAN_MASK		ADC_INPUTCTRL_INPUTSCAN(B00001111)
 #define ADC_INPUTCTRL_MUXNEG(x)			((x) << 8)
+#define ADC_INPUTCTRL_MUXNEG_MASK		ADC_INPUTCTRL_MUXNEG(B00011111)
 #define ADC_INPUTCTRL_MUXPOS(x)			((x) << 0)
+#define ADC_INPUTCTRL_MUXPOS_MASK		ADC_INPUTCTRL_MUXPOS(B00011111)
 
 	/* 0x14: Event Control */
 	uint8_t volatile EVCTRL;
@@ -126,11 +138,12 @@ struct zmcu_adc {
 	/* 0x28: Calibration */
 	uint16_t volatile CALIB;
 #define ADC_CALIB_BIAS_CAL(x)			((x) << 8)
+#define ADC_CALIB_BIAS_CAL_MASK			ADC_CALIB_BIAS_CAL(B00000111)
 #define ADC_CALIB_LINEARITY_CAL(x)		((x) << 0)
+#define ADC_CALIB_LINEARITY_CAL_MASK		ADC_CALIB_LINEARITY_CAL(B11111111)
 
 	/* 0x2A: Debug Control */
 	uint8_t volatile DBGCTRL;
 #define ADC_DBGCTRL_DBGRUN			(1u << 0)
 
 };
-

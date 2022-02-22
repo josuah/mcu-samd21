@@ -10,40 +10,38 @@ struct zmcu_rtc {
 	/* 0x00: Control - MODE0 */
 	uint16_t volatile CTRL;
 #define RTC_CTRL_PRESCALER(x)			((x) << 8)
+#define RTC_CTRL_PRESCALER_MASK			RTC_CTRL_PRESCALER(B00001111)
 #define RTC_CTRL_MATCHCLR			(1u << 7)
 #define RTC_CTRL_MODE(x)			((x) << 2)
+#define RTC_CTRL_MODE_MASK			RTC_CTRL_MODE(B00000011)
 #define RTC_CTRL_ENABLE				(1u << 1)
 #define RTC_CTRL_SWRST				(1u << 0)
 
 };
-
-#include <stddef.h>
-#include <stdint.h>
-#include <binary.h>
 
 struct zmcu_rtc {
 
 	/* 0x00: Control - MODE1 */
 	uint16_t volatile CTRL;
 #define RTC_CTRL_PRESCALER(x)			((x) << 8)
+#define RTC_CTRL_PRESCALER_MASK			RTC_CTRL_PRESCALER(B00001111)
 #define RTC_CTRL_MODE(x)			((x) << 2)
+#define RTC_CTRL_MODE_MASK			RTC_CTRL_MODE(B00000011)
 #define RTC_CTRL_ENABLE				(1u << 1)
 #define RTC_CTRL_SWRST				(1u << 0)
 
 };
-
-#include <stddef.h>
-#include <stdint.h>
-#include <binary.h>
 
 struct zmcu_rtc {
 
 	/* 0x00: Control - MODE2 */
 	uint16_t volatile CTRL;
 #define RTC_CTRL_PRESCALER(x)			((x) << 8)
+#define RTC_CTRL_PRESCALER_MASK			RTC_CTRL_PRESCALER(B00001111)
 #define RTC_CTRL_MATCHCLR			(1u << 7)
 #define RTC_CTRL_CLKREP				(1u << 6)
 #define RTC_CTRL_MODE(x)			((x) << 2)
+#define RTC_CTRL_MODE_MASK			RTC_CTRL_MODE(B00000011)
 #define RTC_CTRL_ENABLE				(1u << 1)
 #define RTC_CTRL_SWRST				(1u << 0)
 
@@ -52,6 +50,7 @@ struct zmcu_rtc {
 #define RTC_READREQ_RREQ			(1u << 15)
 #define RTC_READREQ_RCONT			(1u << 14)
 #define RTC_READREQ_ADDR(x)			((x) << 0)
+#define RTC_READREQ_ADDR_MASK			RTC_READREQ_ADDR(B00111111)
 
 	/* 0x04: Event Control - MODE0 */
 	uint16_t volatile EVCTRL;
@@ -140,6 +139,7 @@ struct zmcu_rtc {
 	uint8_t volatile FREQCORR;
 #define RTC_FREQCORR_SIGN			(1u << 7)
 #define RTC_FREQCORR_VALUE(x)			((x) << 0)
+#define RTC_FREQCORR_VALUE_MASK			RTC_FREQCORR_VALUE(B01111111)
 
 	/* 0x0D */
 	uint8_t volatile RESERVED1[0x10-0x0D];
@@ -155,11 +155,17 @@ struct zmcu_rtc {
 	/* 0x10: Clock Value - MODE2 */
 	uint32_t volatile CLOCK;
 #define RTC_CLOCK_YEAR(x)			((x) << 26)
+#define RTC_CLOCK_YEAR_MASK			RTC_CLOCK_YEAR(B00111111)
 #define RTC_CLOCK_MONTH(x)			((x) << 22)
+#define RTC_CLOCK_MONTH_MASK			RTC_CLOCK_MONTH(B00001111)
 #define RTC_CLOCK_DAY(x)			((x) << 17)
+#define RTC_CLOCK_DAY_MASK			RTC_CLOCK_DAY(B00011111)
 #define RTC_CLOCK_HOUR(x)			((x) << 12)
+#define RTC_CLOCK_HOUR_MASK			RTC_CLOCK_HOUR(B00011111)
 #define RTC_CLOCK_MINUTE(x)			((x) << 6)
+#define RTC_CLOCK_MINUTE_MASK			RTC_CLOCK_MINUTE(B00111111)
 #define RTC_CLOCK_SECOND(x)			((x) << 0)
+#define RTC_CLOCK_SECOND_MASK			RTC_CLOCK_SECOND(B00111111)
 
 	/* 0x14: Counter Period - MODE1 */
 	uint16_t volatile PER;
@@ -179,15 +185,22 @@ struct zmcu_rtc {
 	/* 0x18: Alarm 0 Value - MODE2 */
 	uint32_t volatile ALARM0;
 #define RTC_ALARM0_YEAR(x)			((x) << 26)
+#define RTC_ALARM0_YEAR_MASK			RTC_ALARM0_YEAR(B00111111)
 #define RTC_ALARM0_MONTH(x)			((x) << 22)
+#define RTC_ALARM0_MONTH_MASK			RTC_ALARM0_MONTH(B00001111)
 #define RTC_ALARM0_DAY(x)			((x) << 17)
+#define RTC_ALARM0_DAY_MASK			RTC_ALARM0_DAY(B00011111)
 #define RTC_ALARM0_HOUR(x)			((x) << 12)
+#define RTC_ALARM0_HOUR_MASK			RTC_ALARM0_HOUR(B00011111)
 #define RTC_ALARM0_MINUTE(x)			((x) << 6)
+#define RTC_ALARM0_MINUTE_MASK			RTC_ALARM0_MINUTE(B00111111)
 #define RTC_ALARM0_SECOND(x)			((x) << 0)
+#define RTC_ALARM0_SECOND_MASK			RTC_ALARM0_SECOND(B00111111)
 
 	/* 0x1C: Alarm n Mask - MODE2 */
 	uint8_t volatile MASK;
 #define RTC_MASK_SEL(x)				((x) << 0)
+#define RTC_MASK_SEL_MASK			RTC_MASK_SEL(B00000111)
 
 };
 

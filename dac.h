@@ -16,6 +16,7 @@ struct zmcu_dac {
 	/* 0x01: Control B */
 	uint8_t volatile CTRLB;
 #define DAC_CTRLB_REFSEL(x)			((x) << 6)
+#define DAC_CTRLB_REFSEL_MASK			DAC_CTRLB_REFSEL(B00000011)
 #define DAC_CTRLB_BDWP				(1u << 4)
 #define DAC_CTRLB_VPD				(1u << 3)
 #define DAC_CTRLB_LEFTADJ			(1u << 2)

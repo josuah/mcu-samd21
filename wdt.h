@@ -16,11 +16,14 @@ struct zmcu_wdt {
 	/* 0x01: Configuration */
 	uint8_t volatile CONFIG;
 #define WDT_CONFIG_WINDOW(x)			((x) << 4)
+#define WDT_CONFIG_WINDOW_MASK			WDT_CONFIG_WINDOW(B00001111)
 #define WDT_CONFIG_PER(x)			((x) << 0)
+#define WDT_CONFIG_PER_MASK			WDT_CONFIG_PER(B00001111)
 
 	/* 0x02: Early Warning Interrupt Control */
 	uint8_t volatile EWCTRL;
 #define WDT_EWCTRL_EWOFFSET(x)			((x) << 0)
+#define WDT_EWCTRL_EWOFFSET_MASK		WDT_EWCTRL_EWOFFSET(B00001111)
 
 	/* 0x03 */
 	uint8_t volatile RESERVED0[0x04-0x03];
@@ -44,6 +47,7 @@ struct zmcu_wdt {
 	/* 0x08: Clear */
 	uint8_t volatile CLEAR;
 #define WDT_CLEAR_CLEAR(x)			((x) << 0)
+#define WDT_CLEAR_CLEAR_MASK			WDT_CLEAR_CLEAR(B11111111)
 
 };
 

@@ -35,6 +35,7 @@ struct zmcu_dsu {
 	uint32_t volatile ADDR;
 #define DSU_ADDR_ADDR(x)			((x) << 2)
 #define DSU_ADDR_AMOD(x)			((x) << 0)
+#define DSU_ADDR_AMOD_MASK			DSU_ADDR_AMOD(B00000011)
 
 	/* 0x08: Length */
 	uint32_t volatile LENGTH;
@@ -55,11 +56,17 @@ struct zmcu_dsu {
 	/* 0x18: Device Identification */
 	uint32_t volatile DID;
 #define DSU_DID_PROCESSOR(x)			((x) << 28)
+#define DSU_DID_PROCESSOR_MASK			DSU_DID_PROCESSOR(B00001111)
 #define DSU_DID_FAMILY(x)			((x) << 23)
+#define DSU_DID_FAMILY_MASK			DSU_DID_FAMILY(B00011111)
 #define DSU_DID_SERIES(x)			((x) << 16)
+#define DSU_DID_SERIES_MASK			DSU_DID_SERIES(B00111111)
 #define DSU_DID_DIE(x)				((x) << 12)
+#define DSU_DID_DIE_MASK			DSU_DID_DIE(B00001111)
 #define DSU_DID_REVISION(x)			((x) << 8)
+#define DSU_DID_REVISION_MASK			DSU_DID_REVISION(B00001111)
 #define DSU_DID_DEVSEL(x)			((x) << 0)
+#define DSU_DID_DEVSEL_MASK			DSU_DID_DEVSEL(B11111111)
 
 	/* 0x1C */
 	uint8_t volatile RESERVED1[0x1000-0x1C];
@@ -90,7 +97,9 @@ struct zmcu_dsu {
 	/* 0x1FD0: Peripheral Identification 4 */
 	uint32_t volatile PID4;
 #define DSU_PID4_FKBC(x)			((x) << 4)
+#define DSU_PID4_FKBC_MASK			DSU_PID4_FKBC(B00001111)
 #define DSU_PID4_JEPCC(x)			((x) << 0)
+#define DSU_PID4_JEPCC_MASK			DSU_PID4_JEPCC(B00001111)
 
 	/* 0x1FD4 */
 	uint8_t volatile RESERVED3[0x1FE0-0x1FD4];
@@ -98,39 +107,51 @@ struct zmcu_dsu {
 	/* 0x1FE0: Peripheral Identification 0 */
 	uint32_t volatile PID0;
 #define DSU_PID0_PARTNBL(x)			((x) << 0)
+#define DSU_PID0_PARTNBL_MASK			DSU_PID0_PARTNBL(B11111111)
 
 	/* 0x1FE4: Peripheral Identification 1 */
 	uint32_t volatile PID1;
 #define DSU_PID1_JEPIDCL(x)			((x) << 4)
+#define DSU_PID1_JEPIDCL_MASK			DSU_PID1_JEPIDCL(B00001111)
 #define DSU_PID1_PARTNBH(x)			((x) << 0)
+#define DSU_PID1_PARTNBH_MASK			DSU_PID1_PARTNBH(B00001111)
 
 	/* 0x1FE8: Peripheral Identification 2 */
 	uint32_t volatile PID2;
 #define DSU_PID2_REVISION(x)			((x) << 4)
+#define DSU_PID2_REVISION_MASK			DSU_PID2_REVISION(B00001111)
 #define DSU_PID2_JEPU				(1u << 3)
 #define DSU_PID2_JEPIDCH(x)			((x) << 0)
+#define DSU_PID2_JEPIDCH_MASK			DSU_PID2_JEPIDCH(B00000111)
 
 	/* 0x1FEC: Peripheral Identification 3 */
 	uint32_t volatile PID3;
 #define DSU_PID3_REVAND(x)			((x) << 4)
+#define DSU_PID3_REVAND_MASK			DSU_PID3_REVAND(B00001111)
 #define DSU_PID3_CUSMOD(x)			((x) << 0)
+#define DSU_PID3_CUSMOD_MASK			DSU_PID3_CUSMOD(B00001111)
 
 	/* 0x1FF0: Component Identification 0 */
 	uint32_t volatile CID0;
 #define DSU_CID0_PREAMBLEB0(x)			((x) << 0)
+#define DSU_CID0_PREAMBLEB0_MASK		DSU_CID0_PREAMBLEB0(B11111111)
 
 	/* 0x1FF4: Component Identification 1 */
 	uint32_t volatile CID1;
 #define DSU_CID1_CCLASS(x)			((x) << 4)
+#define DSU_CID1_CCLASS_MASK			DSU_CID1_CCLASS(B00001111)
 #define DSU_CID1_PREAMBLE(x)			((x) << 0)
+#define DSU_CID1_PREAMBLE_MASK			DSU_CID1_PREAMBLE(B00001111)
 
 	/* 0x1FF8: Component Identification 2 */
 	uint32_t volatile CID2;
 #define DSU_CID2_PREAMBLEB2(x)			((x) << 0)
+#define DSU_CID2_PREAMBLEB2_MASK		DSU_CID2_PREAMBLEB2(B11111111)
 
 	/* 0x1FFC: Component Identification 3 */
 	uint32_t volatile CID3;
 #define DSU_CID3_PREAMBLEB3(x)			((x) << 0)
+#define DSU_CID3_PREAMBLEB3_MASK		DSU_CID3_PREAMBLEB3(B11111111)
 
 };
 

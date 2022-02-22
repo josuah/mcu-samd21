@@ -20,6 +20,7 @@ struct zmcu_eic {
 	uint8_t volatile NMICTRL;
 #define EIC_NMICTRL_NMIFILTEN			(1u << 3)
 #define EIC_NMICTRL_NMISENSE(x)			((x) << 0)
+#define EIC_NMICTRL_NMISENSE_MASK		EIC_NMICTRL_NMISENSE(B00000111)
 
 	/* 0x03: Non-Maskable Interrupt Flag Status and Clear */
 	uint8_t volatile NMIFLAG;
@@ -49,4 +50,3 @@ struct zmcu_eic {
 	uint32_t volatile CONFIG;
 
 };
-

@@ -82,8 +82,10 @@ struct zmcu_sysctrl {
 	/* 0x10: External Multipurpose Crystal Oscillator (XOSC) Control */
 	uint16_t volatile XOSC;
 #define SYSCTRL_XOSC_STARTUP(x)			((x) << 12)
+#define SYSCTRL_XOSC_STARTUP_MASK		SYSCTRL_XOSC_STARTUP(B00001111)
 #define SYSCTRL_XOSC_AMPGC			(1u << 11)
 #define SYSCTRL_XOSC_GAIN(x)			((x) << 8)
+#define SYSCTRL_XOSC_GAIN_MASK			SYSCTRL_XOSC_GAIN(B00000111)
 #define SYSCTRL_XOSC_ONDEMAND			(1u << 7)
 #define SYSCTRL_XOSC_RUNSTDBY			(1u << 6)
 #define SYSCTRL_XOSC_XTALEN			(1u << 2)
@@ -96,6 +98,7 @@ struct zmcu_sysctrl {
 	uint16_t volatile XOSC32K;
 #define SYSCTRL_XOSC32K_WRTLOCK			(1u << 12)
 #define SYSCTRL_XOSC32K_STARTUP(x)		((x) << 8)
+#define SYSCTRL_XOSC32K_STARTUP_MASK		SYSCTRL_XOSC32K_STARTUP(B00000111)
 #define SYSCTRL_XOSC32K_ONDEMAND		(1u << 7)
 #define SYSCTRL_XOSC32K_RUNSTDBY		(1u << 6)
 #define SYSCTRL_XOSC32K_AAMPEN			(1u << 5)
@@ -109,8 +112,10 @@ struct zmcu_sysctrl {
 	/* 0x18: 32kHz Internal Oscillator (OSC32K) Control */
 	uint32_t volatile OSC32K;
 #define SYSCTRL_OSC32K_CALIB(x)			((x) << 16)
+#define SYSCTRL_OSC32K_CALIB_MASK		SYSCTRL_OSC32K_CALIB(B01111111)
 #define SYSCTRL_OSC32K_WRTLOCK			(1u << 12)
 #define SYSCTRL_OSC32K_STARTUP(x)		((x) << 8)
+#define SYSCTRL_OSC32K_STARTUP_MASK		SYSCTRL_OSC32K_STARTUP(B00000111)
 #define SYSCTRL_OSC32K_ONDEMAND			(1u << 7)
 #define SYSCTRL_OSC32K_RUNSTDBY			(1u << 6)
 #define SYSCTRL_OSC32K_EN32K			(1u << 2)
@@ -120,6 +125,7 @@ struct zmcu_sysctrl {
 	uint8_t volatile OSCULP32K;
 #define SYSCTRL_OSCULP32K_WRTLOCK		(1u << 7)
 #define SYSCTRL_OSCULP32K_CALIB(x)		((x) << 0)
+#define SYSCTRL_OSCULP32K_CALIB_MASK		SYSCTRL_OSCULP32K_CALIB(B00011111)
 
 	/* 0x1D */
 	uint8_t volatile RESERVED2[0x20-0x1D];
@@ -127,8 +133,10 @@ struct zmcu_sysctrl {
 	/* 0x20: 8MHz Internal Oscillator (OSC8M) Control */
 	uint32_t volatile OSC8M;
 #define SYSCTRL_OSC8M_FRANGE(x)			((x) << 30)
+#define SYSCTRL_OSC8M_FRANGE_MASK		SYSCTRL_OSC8M_FRANGE(B00000011)
 #define SYSCTRL_OSC8M_CALIB(x)			((x) << 16)
 #define SYSCTRL_OSC8M_PRESC(x)			((x) << 8)
+#define SYSCTRL_OSC8M_PRESC_MASK		SYSCTRL_OSC8M_PRESC(B00000011)
 #define SYSCTRL_OSC8M_ONDEMAND			(1u << 7)
 #define SYSCTRL_OSC8M_RUNSTDBY			(1u << 6)
 #define SYSCTRL_OSC8M_ENABLE			(1u << 1)
@@ -154,11 +162,13 @@ struct zmcu_sysctrl {
 	uint32_t volatile DFLLVAL;
 #define SYSCTRL_DFLLVAL_DIFF(x)			((x) << 16)
 #define SYSCTRL_DFLLVAL_COARSE(x)		((x) << 10)
+#define SYSCTRL_DFLLVAL_COARSE_MASK		SYSCTRL_DFLLVAL_COARSE(B00111111)
 #define SYSCTRL_DFLLVAL_FINE(x)			((x) << 0)
 
 	/* 0x2C: DFLL48M Multiplier */
 	uint32_t volatile DFLLMUL;
 #define SYSCTRL_DFLLMUL_CSTEP(x)		((x) << 26)
+#define SYSCTRL_DFLLMUL_CSTEP_MASK		SYSCTRL_DFLLMUL_CSTEP(B00111111)
 #define SYSCTRL_DFLLMUL_FSTEP(x)		((x) << 16)
 #define SYSCTRL_DFLLMUL_MUL(x)			((x) << 0)
 
@@ -172,11 +182,14 @@ struct zmcu_sysctrl {
 	/* 0x34: 3.3V Brown-Out Detector (BOD33) Control */
 	uint32_t volatile BOD33;
 #define SYSCTRL_BOD33_LEVEL(x)			((x) << 16)
+#define SYSCTRL_BOD33_LEVEL_MASK		SYSCTRL_BOD33_LEVEL(B00111111)
 #define SYSCTRL_BOD33_PSEL(x)			((x) << 12)
+#define SYSCTRL_BOD33_PSEL_MASK			SYSCTRL_BOD33_PSEL(B00001111)
 #define SYSCTRL_BOD33_CEN			(1u << 9)
 #define SYSCTRL_BOD33_MODE			(1u << 8)
 #define SYSCTRL_BOD33_RUNSTDBY			(1u << 6)
 #define SYSCTRL_BOD33_ACTION(x)			((x) << 3)
+#define SYSCTRL_BOD33_ACTION_MASK		SYSCTRL_BOD33_ACTION(B00000011)
 #define SYSCTRL_BOD33_HYST			(1u << 2)
 #define SYSCTRL_BOD33_ENABLE			(1u << 1)
 
@@ -209,6 +222,7 @@ struct zmcu_sysctrl {
 	/* 0x48: DPLL Ratio Control */
 	uint32_t volatile DPLLRATIO;
 #define SYSCTRL_DPLLRATIO_LDRFRAC(x)		((x) << 16)
+#define SYSCTRL_DPLLRATIO_LDRFRAC_MASK		SYSCTRL_DPLLRATIO_LDRFRAC(B00001111)
 #define SYSCTRL_DPLLRATIO_LDR(x)		((x) << 0)
 
 	/* 0x4C: DPLL Control B */
@@ -216,10 +230,13 @@ struct zmcu_sysctrl {
 #define SYSCTRL_DPLLCTRLB_DIV(x)		((x) << 16)
 #define SYSCTRL_DPLLCTRLB_LBYPASS		(1u << 12)
 #define SYSCTRL_DPLLCTRLB_LTIME(x)		((x) << 8)
+#define SYSCTRL_DPLLCTRLB_LTIME_MASK		SYSCTRL_DPLLCTRLB_LTIME(B00000111)
 #define SYSCTRL_DPLLCTRLB_REFCLK(x)		((x) << 4)
+#define SYSCTRL_DPLLCTRLB_REFCLK_MASK		SYSCTRL_DPLLCTRLB_REFCLK(B00000011)
 #define SYSCTRL_DPLLCTRLB_WUF			(1u << 3)
 #define SYSCTRL_DPLLCTRLB_LPEN			(1u << 2)
 #define SYSCTRL_DPLLCTRLB_FILTER(x)		((x) << 0)
+#define SYSCTRL_DPLLCTRLB_FILTER_MASK		SYSCTRL_DPLLCTRLB_FILTER(B00000011)
 
 	/* 0x50: DPLL Status */
 	uint8_t volatile DPLLSTATUS;
