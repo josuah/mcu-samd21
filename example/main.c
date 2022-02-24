@@ -1,6 +1,5 @@
 #include <main.h>
 #include <port.h>
-#include <sercom.h>
 #include <usart.h>
 #include <gclk.h>
 #include <pm.h>
@@ -46,10 +45,10 @@ main(void)
 	PM->APBCMASK |= PM_APBCMASK_SERCOM0;
 
 	/* setup SERCOM0 for use with USART */
-	reg = SERCOM0->CTRLA & ~SERCOM_CTRLA_MODE_MASK;
-	SERCOM0->CTRLA = reg 
-	  | SERCOM_CTRLA_MODE(SERCOM_CTRLA_MODE_USART_INT)
-	  | SERCOM_CTRLA_ENABLE;
+	reg = USART0->CTRLA & ~USART_CTRLA_MODE_MASK;
+	USART0->CTRLA = reg 
+	  | USART_CTRLA_MODE(USART_CTRLA_MODE_INTERNAL_CLK)
+	  | USART_CTRLA_ENABLE;
 
 	return 0;
 }

@@ -65,14 +65,14 @@ struct zmcu_port {
 	uint8_t volatile PMUX[16];
 #define PORT_PMUX(pin, x)                       ((x) << ((pin) & 1) * 4)
 #define PORT_PMUX_MASK(pin)			PORT_PMUX((pin), B00001111)
-#define PORT_PMUX_FN_A				0
-#define PORT_PMUX_FN_B				1
-#define PORT_PMUX_FN_C				2
-#define PORT_PMUX_FN_D				3
-#define PORT_PMUX_FN_E				4
-#define PORT_PMUX_FN_F				5
-#define PORT_PMUX_FN_G				6
-#define PORT_PMUX_FN_H				7
+#define PORT_PMUX_A				0
+#define PORT_PMUX_B				1
+#define PORT_PMUX_C				2
+#define PORT_PMUX_D				3
+#define PORT_PMUX_E				4
+#define PORT_PMUX_F				5
+#define PORT_PMUX_G				6
+#define PORT_PMUX_H				7
 
 	/* 0x40: Pin Configuration */
 	uint8_t volatile PINCFG[32];

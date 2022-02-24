@@ -30,6 +30,7 @@ struct zmcu_i2c_slave {
 #define I2CS_CTRLA_RUNSTDBY			(1u << 7)
 #define I2CS_CTRLA_MODE(x)			((x) << 2)
 #define I2CS_CTRLA_MODE_MASK			I2CS_CTRLA_MODE(B00000111)
+#define I2CS_CTRLA_MODE_SLAVE			0x04
 #define I2CS_CTRLA_ENABLE			(1u << 1)
 #define I2CS_CTRLA_SWRST			(1u << 0)
 
@@ -156,6 +157,7 @@ struct zmcu_i2c_master {
 #define I2CM_CTRLA_RUNSTDBY			(1u << 7)
 #define I2CM_CTRLA_MODE(x)			((x) << 2)
 #define I2CM_CTRLA_MODE_MASK			I2CM_CTRLA_MODE(B00000111)
+#define I2CS_CTRLA_MODE_MASTER			0x05
 #define I2CM_CTRLA_ENABLE			(1u << 1)
 #define I2CM_CTRLA_SWRST			(1u << 0)
 

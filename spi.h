@@ -2,12 +2,12 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define SERCOM0 ((struct zmcu_spi *)0x42000800)
-#define SERCOM1 ((struct zmcu_spi *)0x42000C00)
-#define SERCOM2 ((struct zmcu_spi *)0x42001000)
-#define SERCOM3 ((struct zmcu_spi *)0x42001400)
-#define SERCOM4 ((struct zmcu_spi *)0x42001800)
-#define SERCOM5 ((struct zmcu_spi *)0x42001C00)
+#define SPI0 ((struct zmcu_spi *)SERCOM0_BASE)
+#define SPI1 ((struct zmcu_spi *)SERCOM1_BASE)
+#define SPI2 ((struct zmcu_spi *)SERCOM2_BASE)
+#define SPI3 ((struct zmcu_spi *)SERCOM3_BASE)
+#define SPI4 ((struct zmcu_spi *)SERCOM4_BASE)
+#define SPI5 ((struct zmcu_spi *)SERCOM5_BASE)
 
 struct zmcu_spi {
 
@@ -17,23 +17,30 @@ struct zmcu_spi {
 #define SPI_CTRLA_CPOL				(1u << 29)
 #define SPI_CTRLA_CPHA				(1u << 28)
 #define SPI_CTRLA_FORM(x)			((x) << 24)
+#define SPI_CTRLA_FORM_MASK			SPI_CTRLA_FORM(B00001111)
 #define SPI_CTRLA_DIPO(x)			((x) << 20)
+#define SPI_CTRLA_DIPO_MASK			SPI_CTRLA_DIPO(B00000011)
 #define SPI_CTRLA_DOPO(x)			((x) << 16)
+#define SPI_CTRLA_DOPO_MASK			SPI_CTRLA_DOPO(B00000011)
 #define SPI_CTRLA_IBON				(1u << 8)
 #define SPI_CTRLA_RUNSTDBY			(1u << 7)
 #define SPI_CTRLA_MODE(x)			((x) << 2)
+#define SPI_CTRLA_MODE_MASK			SPI_CTRLA_MODE(B00000111)
 #define SPI_CTRLA_ENABLE			(1u << 1)
 #define SPI_CTRLA_SWRST				(1u << 0)
 
 	/* 0x04: Control B */
 	uint32_t volatile CTRLB;
 #define SPI_CTRLB_FIFOCLR(x)			((x) << 22)
+#define SPI_CTRLB_FIFOCLR_MASK			SPI_CTRLB_FIFOCLR(B00000011)
 #define SPI_CTRLB_RXEN				(1u << 17)
 #define SPI_CTRLB_AMODE(x)			((x) << 14)
+#define SPI_CTRLB_AMODE_MASK			SPI_CTRLB_AMODE(B00000011)
 #define SPI_CTRLB_MSSEN				(1u << 13)
 #define SPI_CTRLB_SSDE				(1u << 9)
 #define SPI_CTRLB_PLOADEN			(1u << 6)
 #define SPI_CTRLB_CHSIZE(x)			((x) << 0)
+#define SPI_CTRLB_CHSIZE_MASK			SPI_CTRLB_CHSIZE(B00000111)
 
 	/* 0x08 */
 	uint8_t volatile RESERVED0[0x0C-0x08];
@@ -41,6 +48,7 @@ struct zmcu_spi {
 	/* 0x0C: Baud Rate */
 	uint8_t volatile BAUD;
 #define SPI_BAUD_BAUD(x)			((x) << 0)
+#define SPI_BAUD_BAUD_MASK			SPI_BAUD_BAUD(B11111111)
 
 	/* 0x0D */
 	uint8_t volatile RESERVED1[0x14-0x0D];
@@ -94,7 +102,9 @@ struct zmcu_spi {
 	/* 0x24: Address */
 	uint32_t volatile ADDR;
 #define SPI_ADDR_ADDRMASK(x)			((x) << 16)
+#define SPI_ADDR_ADDRMASK_MASK			SPI_ADDR_ADDRMASK(B11111111)
 #define SPI_ADDR_ADDR(x)			((x) << 0)
+#define SPI_ADDR_ADDR_MASK			SPI_ADDR_ADDR(B11111111)
 
 	/* 0x28: Data */
 	uint16_t volatile DATA;
@@ -113,11 +123,15 @@ struct zmcu_spi {
 	/* 0x34: FIFO Space */
 	uint16_t volatile FIFOSPACE;
 #define SPI_FIFOSPACE_RXSPACE(x)		((x) << 8)
+#define SPI_FIFOSPACE_RXSPACE_MASK		SPI_FIFOSPACE_RXSPACE(B00011111)
 #define SPI_FIFOSPACE_TXSPACE(x)		((x) << 0)
+#define SPI_FIFOSPACE_TXSPACE_MASK		SPI_FIFOSPACE_TXSPACE(B00011111)
 
 	/* 0x36: FIFO CPU Pointers */
 	uint16_t volatile FIFOPTR;
 #define SPI_FIFOPTR_CPURDPTR(x)			((x) << 8)
+#define SPI_FIFOPTR_CPURDPTR_MASK		SPI_FIFOPTR_CPURDPTR(B00001111)
 #define SPI_FIFOPTR_CPUWRPTR(x)			((x) << 0)
+#define SPI_FIFOPTR_CPUWRPTR_MASK		SPI_FIFOPTR_CPUWRPTR(B00001111)
 
 };
