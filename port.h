@@ -2,9 +2,9 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define PORT ((struct zmcu_port *)0x41004400)
+#define PORT ((struct sdk_port *)0x41004400)
 
-struct zmcu_port {
+struct sdk_port {
 
 	/* 0x00: Data Direction */
 	uint32_t volatile DIR;

@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define GCLK ((struct zmcu_gclk *)0x40000C00)
-#define GCLK ((struct zmcu_gclk *)0x40000C00)
+#define GCLK ((struct sdk_gclk *)0x40000C00)
+#define GCLK ((struct sdk_gclk *)0x40000C00)
 
-struct zmcu_gclk {
+struct sdk_gclk {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

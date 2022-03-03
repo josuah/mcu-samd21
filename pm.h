@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define PM ((struct zmcu_pm *)0x40000400)
-#define PM ((struct zmcu_pm *)0x40000400)
+#define PM ((struct sdk_pm *)0x40000400)
+#define PM ((struct sdk_pm *)0x40000400)
 
-struct zmcu_pm {
+struct sdk_pm {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

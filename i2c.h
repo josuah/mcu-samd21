@@ -2,20 +2,20 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define I2C0M ((struct zmcu_i2c_master *)SERCOM0_BASE)
-#define I2C0S ((struct zmcu_i2c_slave *)SERCOM0_BASE)
-#define I2C1M ((struct zmcu_i2c_master *)SERCOM1_BASE)
-#define I2C1S ((struct zmcu_i2c_slave *)SERCOM1_BASE)
-#define I2C2M ((struct zmcu_i2c_master *)SERCOM2_BASE)
-#define I2C2S ((struct zmcu_i2c_slave *)SERCOM2_BASE)
-#define I2C3M ((struct zmcu_i2c_master *)SERCOM3_BASE)
-#define I2C3S ((struct zmcu_i2c_slave *)SERCOM3_BASE)
-#define I2C4M ((struct zmcu_i2c_master *)SERCOM4_BASE)
-#define I2C4S ((struct zmcu_i2c_slave *)SERCOM4_BASE)
-#define I2C5M ((struct zmcu_i2c_master *)SERCOM5_BASE)
-#define I2C5S ((struct zmcu_i2c_slave *)SERCOM5_BASE)
+#define I2C0M ((struct sdk_i2c_master *)SERCOM0_BASE)
+#define I2C0S ((struct sdk_i2c_slave *)SERCOM0_BASE)
+#define I2C1M ((struct sdk_i2c_master *)SERCOM1_BASE)
+#define I2C1S ((struct sdk_i2c_slave *)SERCOM1_BASE)
+#define I2C2M ((struct sdk_i2c_master *)SERCOM2_BASE)
+#define I2C2S ((struct sdk_i2c_slave *)SERCOM2_BASE)
+#define I2C3M ((struct sdk_i2c_master *)SERCOM3_BASE)
+#define I2C3S ((struct sdk_i2c_slave *)SERCOM3_BASE)
+#define I2C4M ((struct sdk_i2c_master *)SERCOM4_BASE)
+#define I2C4S ((struct sdk_i2c_slave *)SERCOM4_BASE)
+#define I2C5M ((struct sdk_i2c_master *)SERCOM5_BASE)
+#define I2C5S ((struct sdk_i2c_slave *)SERCOM5_BASE)
 
-struct zmcu_i2c_slave {
+struct sdk_i2c_slave {
 
 	/* 0x00: Control A */
 	uint32_t volatile CTRLA;
@@ -139,7 +139,7 @@ struct zmcu_i2c_slave {
 
 };
 
-struct zmcu_i2c_master {
+struct sdk_i2c_master {
 
 	/* 0x00: Control A */
 	uint32_t volatile CTRLA;

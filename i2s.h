@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define I2S ((struct zmcu_i2s *)0x42005000)
-#define I2S ((struct zmcu_i2s *)0x42005000)
+#define I2S ((struct sdk_i2s *)0x42005000)
+#define I2S ((struct sdk_i2s *)0x42005000)
 
-struct zmcu_i2s {
+struct sdk_i2s {
 
 	/* 0x00: Control A */
 	uint8_t volatile CTRLA;

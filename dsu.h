@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define DSU ((struct zmcu_dsu *)0x41002000)
-#define DSU ((struct zmcu_dsu *)0x41002000)
+#define DSU ((struct sdk_dsu *)0x41002000)
+#define DSU ((struct sdk_dsu *)0x41002000)
 
-struct zmcu_dsu {
+struct sdk_dsu {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

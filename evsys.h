@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define EVSYS ((struct zmcu_evsys *)0x42000400)
-#define EVSYS ((struct zmcu_evsys *)0x42000400)
+#define EVSYS ((struct sdk_evsys *)0x42000400)
+#define EVSYS ((struct sdk_evsys *)0x42000400)
 
-struct zmcu_evsys {
+struct sdk_evsys {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

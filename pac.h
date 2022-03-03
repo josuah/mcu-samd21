@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define PAC0 (((struct zmcu_pac *)0x40000000)
-#define PAC0 (((struct zmcu_pac *)0x40000000)
-#define PAC1 (((struct zmcu_pac *)0x41000000)
-#define PAC1 (((struct zmcu_pac *)0x41000000)
-#define PAC2 (((struct zmcu_pac *)0x42000000)
-#define PAC2 (((struct zmcu_pac *)0x42000000)
+#define PAC0 (((struct sdk_pac *)0x40000000)
+#define PAC0 (((struct sdk_pac *)0x40000000)
+#define PAC1 (((struct sdk_pac *)0x41000000)
+#define PAC1 (((struct sdk_pac *)0x41000000)
+#define PAC2 (((struct sdk_pac *)0x42000000)
+#define PAC2 (((struct sdk_pac *)0x42000000)
 
-struct zmcu_pac {
+struct sdk_pac {
 
 	/* 0x00: Write Protect Clear */
 	uint32_t volatile WPCLR;

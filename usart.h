@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define USART0 ((struct zmcu_usart *)SERCOM0_BASE)
-#define USART1 ((struct zmcu_usart *)SERCOM1_BASE)
-#define USART2 ((struct zmcu_usart *)SERCOM2_BASE)
-#define USART3 ((struct zmcu_usart *)SERCOM3_BASE)
-#define USART4 ((struct zmcu_usart *)SERCOM4_BASE)
-#define USART5 ((struct zmcu_usart *)SERCOM5_BASE)
+#define USART0 ((struct sdk_usart *)SERCOM0_BASE)
+#define USART1 ((struct sdk_usart *)SERCOM1_BASE)
+#define USART2 ((struct sdk_usart *)SERCOM2_BASE)
+#define USART3 ((struct sdk_usart *)SERCOM3_BASE)
+#define USART4 ((struct sdk_usart *)SERCOM4_BASE)
+#define USART5 ((struct sdk_usart *)SERCOM5_BASE)
 
-struct zmcu_usart {
+struct sdk_usart {
 
 	/* 0x00: Control A */
 	uint32_t volatile CTRLA;

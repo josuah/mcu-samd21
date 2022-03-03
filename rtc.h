@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define RTC ((struct zmcu_rtc *)0x40001400)
-#define RTC ((struct zmcu_rtc *)0x40001400)
+#define RTC ((struct sdk_rtc *)0x40001400)
+#define RTC ((struct sdk_rtc *)0x40001400)
 
-struct zmcu_rtc {
+struct sdk_rtc {
 
 	/* 0x00: Control - MODE0 */
 	uint16_t volatile CTRL;
@@ -19,7 +19,7 @@ struct zmcu_rtc {
 
 };
 
-struct zmcu_rtc {
+struct sdk_rtc {
 
 	/* 0x00: Control - MODE1 */
 	uint16_t volatile CTRL;
@@ -32,7 +32,7 @@ struct zmcu_rtc {
 
 };
 
-struct zmcu_rtc {
+struct sdk_rtc {
 
 	/* 0x00: Control - MODE2 */
 	uint16_t volatile CTRL;

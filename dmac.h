@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define DMAC ((struct zmcu_dmac *)0x41004800)
-#define DMAC ((struct zmcu_dmac *)0x41004800)
+#define DMAC ((struct sdk_dmac *)0x41004800)
+#define DMAC ((struct sdk_dmac *)0x41004800)
 
-struct zmcu_dmac {
+struct sdk_dmac {
 
 	/* 0x00: Control */
 	uint16_t volatile CTRL;
@@ -172,7 +172,7 @@ struct zmcu_dmac {
 
 };
 
-struct zmcu_dmac {
+struct sdk_dmac {
 
 	/* 0x00: Block Transfer Control */
 	uint16_t volatile BTCTRL;
