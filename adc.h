@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define ADC ((struct sdk_adc *)0x42004000)
-#define ADC ((struct sdk_adc *)0x42004000)
+#define ADC ((struct mcu_adc *)0x42004000)
+#define ADC ((struct mcu_adc *)0x42004000)
 
-struct sdk_adc {
+struct mcu_adc {
 
 	/* 0x00: Control A */
 	uint8_t volatile CTRLA;

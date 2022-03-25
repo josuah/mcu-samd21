@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define SPI0 ((struct sdk_spi *)SERCOM0_BASE)
-#define SPI1 ((struct sdk_spi *)SERCOM1_BASE)
-#define SPI2 ((struct sdk_spi *)SERCOM2_BASE)
-#define SPI3 ((struct sdk_spi *)SERCOM3_BASE)
-#define SPI4 ((struct sdk_spi *)SERCOM4_BASE)
-#define SPI5 ((struct sdk_spi *)SERCOM5_BASE)
+#define SPI0 ((struct mcu_spi *)SERCOM0_BASE)
+#define SPI1 ((struct mcu_spi *)SERCOM1_BASE)
+#define SPI2 ((struct mcu_spi *)SERCOM2_BASE)
+#define SPI3 ((struct mcu_spi *)SERCOM3_BASE)
+#define SPI4 ((struct mcu_spi *)SERCOM4_BASE)
+#define SPI5 ((struct mcu_spi *)SERCOM5_BASE)
 
-struct sdk_spi {
+struct mcu_spi {
 
 	/* 0x00: Control A */
 	uint32_t volatile CTRLA;

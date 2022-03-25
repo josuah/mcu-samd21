@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define WDT ((struct sdk_wdt *)0x40001000)
-#define WDT ((struct sdk_wdt *)0x40001000)
+#define WDT ((struct mcu_wdt *)0x40001000)
+#define WDT ((struct mcu_wdt *)0x40001000)
 
-struct sdk_wdt {
+struct mcu_wdt {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define EIC ((struct sdk_eic *)0x40001800)
-#define EIC ((struct sdk_eic *)0x40001800)
+#define EIC ((struct mcu_eic *)0x40001800)
+#define EIC ((struct mcu_eic *)0x40001800)
 
-struct sdk_eic {
+struct mcu_eic {
 
 	/* 0x00: Control */
 	uint8_t volatile CTRL;

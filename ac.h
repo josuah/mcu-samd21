@@ -2,12 +2,12 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define AC ((struct sdk_ac *)0x42004400)
-#define AC ((struct sdk_ac *)0x42004400)
-#define AC1 ((struct sdk_ac *)0x42005400)
-#define AC1 ((struct sdk_ac *)0x42005400)
+#define AC ((struct mcu_ac *)0x42004400)
+#define AC ((struct mcu_ac *)0x42004400)
+#define AC1 ((struct mcu_ac *)0x42005400)
+#define AC1 ((struct mcu_ac *)0x42005400)
 
-struct sdk_ac {
+struct mcu_ac {
 
 	/* 0x00: Control A */
 	uint8_t volatile CTRLA;

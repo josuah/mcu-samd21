@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define USB ((struct sdk_usb *)0x41005000)
-#define USB ((struct sdk_usb *)0x41005000)
+#define USB ((struct mcu_usb *)0x41005000)
+#define USB ((struct mcu_usb *)0x41005000)
 
-struct sdk_usb {
+struct mcu_usb {
 
 	/* 0x00: Address of Data Buffer */
 	uint32_t volatile ADDR;
@@ -180,7 +180,7 @@ struct sdk_usb {
 #include <stdint.h>
 #include <binary.h>
 
-struct sdk_usb {
+struct mcu_usb {
 
 	/* 0x00: Address of the Data Buffer */
 	uint32_t volatile ADDR;
@@ -223,7 +223,7 @@ struct sdk_usb {
 
 };
 
-struct sdk_usb {
+struct mcu_usb {
 
 	/* 0x00: Control A */
 	uint8_t volatile CTRLA;
@@ -425,7 +425,7 @@ struct sdk_usb {
 
 };
 
-struct sdk_usb {
+struct mcu_usb {
 
 	/* 0x00: Address of the Data Buffer */
 	uint32_t volatile ADDR;

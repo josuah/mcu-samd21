@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define SYSCTRL ((struct sdk_sysctrl *)0x40000800)
-#define SYSCTRL ((struct sdk_sysctrl *)0x40000800)
+#define SYSCTRL ((struct mcu_sysctrl *)0x40000800)
+#define SYSCTRL ((struct mcu_sysctrl *)0x40000800)
 
-struct sdk_sysctrl {
+struct mcu_sysctrl {
 
 	/* 0x00: Interrupt Enable Clear */
 	uint32_t volatile INTENCLR;

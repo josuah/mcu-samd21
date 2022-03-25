@@ -2,14 +2,14 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define TCC0 ((struct sdk_tcc *)0x42002000)
-#define TCC0 ((struct sdk_tcc *)0x42002000)
-#define TCC1 ((struct sdk_tcc *)0x42002400)
-#define TCC1 ((struct sdk_tcc *)0x42002400)
-#define TCC2 ((struct sdk_tcc *)0x42002800)
-#define TCC2 ((struct sdk_tcc *)0x42002800)
+#define TCC0 ((struct mcu_tcc *)0x42002000)
+#define TCC0 ((struct mcu_tcc *)0x42002000)
+#define TCC1 ((struct mcu_tcc *)0x42002400)
+#define TCC1 ((struct mcu_tcc *)0x42002400)
+#define TCC2 ((struct mcu_tcc *)0x42002800)
+#define TCC2 ((struct mcu_tcc *)0x42002800)
 
-struct sdk_tcc {
+struct mcu_tcc {
 
 	/* 0x00: Control A */
 	uint32_t volatile CTRLA;

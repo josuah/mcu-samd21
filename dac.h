@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define DAC ((struct sdk_dac *)0x42004800)
-#define DAC ((struct sdk_dac *)0x42004800)
+#define DAC ((struct mcu_dac *)0x42004800)
+#define DAC ((struct mcu_dac *)0x42004800)
 
-struct sdk_dac {
+struct mcu_dac {
 
 	/* 0x00: Control A */
 	uint8_t volatile CTRLA;

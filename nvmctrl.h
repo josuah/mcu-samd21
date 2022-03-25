@@ -2,10 +2,10 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define NVMCTRL ((struct sdk_nvmctrl *)0x41004000)
-#define NVMCTRL ((struct sdk_nvmctrl *)0x41004000)
+#define NVMCTRL ((struct mcu_nvmctrl *)0x41004000)
+#define NVMCTRL ((struct mcu_nvmctrl *)0x41004000)
 
-struct sdk_nvmctrl {
+struct mcu_nvmctrl {
 
 	/* 0x00: Control A */
 	uint16_t volatile CTRLA;

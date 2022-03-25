@@ -2,18 +2,18 @@
 #include <stdint.h>
 #include <binary.h>
 
-#define TC3 ((struct sdk_tc *)0x42002C00)
-#define TC3 ((struct sdk_tc *)0x42002C00)
-#define TC4 ((struct sdk_tc *)0x42003000)
-#define TC4 ((struct sdk_tc *)0x42003000)
-#define TC5 ((struct sdk_tc *)0x42003400)
-#define TC5 ((struct sdk_tc *)0x42003400)
-#define TC6 ((struct sdk_tc *)0x42003800)
-#define TC6 ((struct sdk_tc *)0x42003800)
-#define TC7 ((struct sdk_tc *)0x42003C00)
-#define TC7 ((struct sdk_tc *)0x42003C00)
+#define TC3 ((struct mcu_tc *)0x42002C00)
+#define TC3 ((struct mcu_tc *)0x42002C00)
+#define TC4 ((struct mcu_tc *)0x42003000)
+#define TC4 ((struct mcu_tc *)0x42003000)
+#define TC5 ((struct mcu_tc *)0x42003400)
+#define TC5 ((struct mcu_tc *)0x42003400)
+#define TC6 ((struct mcu_tc *)0x42003800)
+#define TC6 ((struct mcu_tc *)0x42003800)
+#define TC7 ((struct mcu_tc *)0x42003C00)
+#define TC7 ((struct mcu_tc *)0x42003C00)
 
-struct sdk_tc {
+struct mcu_tc {
 
 	/* 0x00: Control A */
 	uint16_t volatile CTRLA;
